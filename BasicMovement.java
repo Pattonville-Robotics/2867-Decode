@@ -12,7 +12,8 @@ public class BasicMovement extends LinearOpMode {
     DcMotor motorLeft;
     DcMotor motorRight;
     DcMotor motorWheel;
-    
+    DcMotor motorWheelred;
+
     @Override
     public void runOpMode() {
         waitForStart();
@@ -23,6 +24,7 @@ public class BasicMovement extends LinearOpMode {
         motorRightback = hardwareMap.get(DcMotor.class, "motorRightback");
         
         motorWheel = hardwareMap.get(DcMotor.class, "motorWheel");
+        motorWheelred = hardwareMap.get(DcMotor.class, "motorWheelred");
         
         motorRight.setDirection(DcMotor.Direction.REVERSE);
         motorRightback.setDirection(DcMotor.Direction.REVERSE);
@@ -63,9 +65,9 @@ public class BasicMovement extends LinearOpMode {
             //Strayfing LEFT
             if (gamepad1.left_stick_x<0){
                 leftPower+=(1);
-                leftPowerback+=(1);
+                leftPowerback+=(-1);
                 rightPower+=(-1);
-                rightPowerback+=(-1);
+                rightPowerback+=(1);
             }
             if (gamepad1.left_stick_x==0){
                  leftPower+=(0);
