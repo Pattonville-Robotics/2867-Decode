@@ -36,19 +36,19 @@ public class RedAuto extends LinearOpMode {
         motorRight.setPower(-1);
         motorRightback.setPower(-1);
         
-        sleep(2800);
+        sleep(3920);
         
         //turn
-        motorLeft.setPower(-1);
-        motorLeftback.setPower(-1);
+        motorLeft.setPower(1);
+        motorLeftback.setPower(1);
         
-        motorRight.setPower(1);
-        motorRightback.setPower(1);
-        sleep(785);
+        motorRight.setPower(-1);
+        motorRightback.setPower(-1);
+        sleep(990);
         
-        //forward and intake
+         //forward and intake
         motorWheel.setPower(-.5);
-        motorWheelred.setPower(.5);
+        motorWheelred.setPower(-.5);
         
         motorLeft.setPower(-.5);
         motorLeftback.setPower(-.5);
@@ -58,7 +58,7 @@ public class RedAuto extends LinearOpMode {
         
         
         
-        sleep(2500);
+        sleep(2550);
         
         motorWheel.setPower(0);
         motorWheelred.setPower(0);
@@ -67,6 +67,7 @@ public class RedAuto extends LinearOpMode {
         
         motorRight.setPower(0);
         motorRightback.setPower(0);
+            
             
     }
     
