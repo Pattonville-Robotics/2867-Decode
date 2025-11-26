@@ -15,7 +15,7 @@ public class BasicMovement2 extends LinearOpMode{
         DcMotor motorLeftback = hardwareMap.dcMotor.get("motorLeftback");   //
         DcMotor motorWheel = hardwareMap.get(DcMotor.class, "motorWheel");  //
         DcMotor motorWheelred = hardwareMap.get(DcMotor.class, "motorWheelred");
-        
+        Servo pusherahhting = hardwareMap.get(Servo.class, "pusherahhting");
         
 
         motorLeft.setDirection(DcMotor.Direction.REVERSE);
@@ -40,23 +40,14 @@ public class BasicMovement2 extends LinearOpMode{
             motorRightback.setPower(RightbackPower);
             
              //intake
-            if (gamepad1.right_trigger>0){
+            if (gamepad1.left_trigger>0){
                 motorWheel.setPower(-.5);
                 motorWheelred.setPower(.5);
             }
-            else if (gamepad1.right_trigger ==0){
-                 motorWheel.setPower(0);
-                 motorWheelred.setPower(0);
-            }
             
-            //output
-            if (gamepad1.left_trigger>0){
-                motorWheel.setPower(1);
-                motorWheelred.setPower(-.5);
-            }
-            else if (gamepad1.left_trigger ==0){
-                 motorWheel.setPower(0);
-                  motorWheelred.setPower(0);
+            //Servo
+            if (gamepad1.right_trigger>0){
+                pusherahhting.setPower(.5);
             }
             
             
