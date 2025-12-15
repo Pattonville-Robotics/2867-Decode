@@ -23,9 +23,9 @@ public class BasicMovement2 extends LinearOpMode{
         waitForStart();
         //Stick power
         while (opModeIsActive()) {
-            double y = -gamepad1.left_stick_y; // Remember, this is reversed!
-            double x = gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
-            double rx = gamepad1.right_stick_x;
+            double y = gamepad1.left_stick_y; // Remember, this is reversed!
+            double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
+            double rx = -gamepad1.right_stick_x;
             
             //Maths
             double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1);
@@ -39,15 +39,22 @@ public class BasicMovement2 extends LinearOpMode{
             motorRight.setPower(RightPower);
             motorRightback.setPower(RightbackPower);
             
-             //intake
+             //shooting
             if (gamepad1.left_trigger>0){
-                motorWheel.setPower(-.5);
-                motorWheelred.setPower(.5);
+                motorWheel.setPower(.55);
+                motorWheelred.setPower(-.55);
             }
-            
+            if (gamepad1.left_trigger == 0){
+                motorWheel.setPower(0);
+                motorWheelred.setPower(0);
+            }
             //Servo
             if (gamepad1.right_trigger>0){
-                pusherahhting.setPower(.5);
+                pusherahhting.setPosition(.13);
+            }
+            if (gamepad1.right_trigger == 0){
+                pusherahhting.setPosition(.03);
+                
             }
             
             
