@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -22,25 +23,29 @@ public class BasicAutonomous extends LinearOpMode {
         motorLeftback = hardwareMap.get(DcMotor.class, "motorLeftback");
         motorRightback = hardwareMap.get(DcMotor.class, "motorRightback");
         
-        motorWheel = hardwareMap.get(DcMotor.class, "motorWheel");
+        // motorWheel = hardwareMap.get(DcMotor.class, "motorWheel");
+        // motorWheelred = hardwareMap.get(DcMotor.class, "motorWheelred");
+        
+        // Servo pusherahhting = hardwareMap.get(Servo.class, "pusherahhting");
         
         motorRight.setDirection(DcMotor.Direction.REVERSE);
         motorRightback.setDirection(DcMotor.Direction.REVERSE);
             
+        //backwards
         motorLeft.setPower(-1);
         motorLeftback.setPower(-1);
         
         motorRight.setPower(-1);
         motorRightback.setPower(-1);
         
-        sleep(1200);
-        
-        motorLeft.setPower(1);
-        motorLeftback.setPower(1);
-        
-        motorRight.setPower(-.5);
-        motorRightback.setPower(-.5);
         sleep(1000);
+        
+        motorLeft.setPower(0);
+        motorLeftback.setPower(0);
+        
+        motorRight.setPower(0);
+        motorRightback.setPower(0);
+        
         
         // motorLeft.setPower(-1);
         // motorLeftback.setPower(-1);

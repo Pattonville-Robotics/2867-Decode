@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
 @TeleOp
-public class RedAuto extends LinearOpMode {
+public class ObelisxAuto extends LinearOpMode {
     DcMotor motorLeftback;
     DcMotor motorRightback;
     DcMotor motorLeft;
@@ -34,25 +34,48 @@ public class RedAuto extends LinearOpMode {
         motorRightback.setDirection(DcMotor.Direction.REVERSE);
         
         //forward
+        motorWheel.setPower(0);
+        motorWheelred.setPower(0);
         motorLeft.setPower(-1);
         motorLeftback.setPower(-1);
         
         motorRight.setPower(-1);
         motorRightback.setPower(-1);
         
-        sleep(3920);
+        sleep(1000);
         
-        //turn
-        motorLeft.setPower(1);
-        motorLeftback.setPower(1);
+        motorLeft.setPower(0);
+        motorLeftback.setPower(0);
         
-        motorRight.setPower(-1);
-        motorRightback.setPower(-1);
-        sleep(990);
+        motorRight.setPower(0);
+        motorRightback.setPower(0);
         
-         //forward and intake
-        motorWheel.setPower(-.5);
-        motorWheelred.setPower(-.5);
+        //shoot
+        sleep(1000);
+        motorWheel.setPower(-1);
+        motorWheelred.setPower(1);
+        sleep(5000);
+        pusherahhting.setPosition(0.25);
+        
+        motorWheel.setPower(1);
+        motorWheelred.setPower(1);
+        
+        
+        pusherahhting.setPosition(.13);
+        sleep(5000);
+        pusherahhting.setPosition(.03);
+        sleep(5000);
+        
+        motorWheel.setPower(1);
+        motorWheelred.setPower(1);
+        
+        
+        pusherahhting.setPosition(.13);
+        sleep(5000);
+        pusherahhting.setPosition(.03);
+        sleep(5000);
+        
+        
         
         motorLeft.setPower(-.5);
         motorLeftback.setPower(-.5);
@@ -62,7 +85,7 @@ public class RedAuto extends LinearOpMode {
         
         
         
-        sleep(2550);
+        
         
         motorWheel.setPower(0);
         motorWheelred.setPower(0);

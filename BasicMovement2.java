@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -13,8 +14,8 @@ public class BasicMovement2 extends LinearOpMode{
         DcMotor motorRightback = hardwareMap.dcMotor.get("motorRightback");   //
         DcMotor motorLeft = hardwareMap.dcMotor.get("motorLeft"); //
         DcMotor motorLeftback = hardwareMap.dcMotor.get("motorLeftback");   //
-        DcMotor motorWheel = hardwareMap.get(DcMotor.class, "motorWheel");  //
-        DcMotor motorWheelred = hardwareMap.get(DcMotor.class, "motorWheelred");
+        DcMotorEx motorWheel = hardwareMap.get(DcMotorEx.class, "motorWheel");  //
+        DcMotorEx motorWheelred = hardwareMap.get(DcMotorEx.class, "motorWheelred");
         Servo pusherahhting = hardwareMap.get(Servo.class, "pusherahhting");
         
 
@@ -38,22 +39,24 @@ public class BasicMovement2 extends LinearOpMode{
             motorLeftback.setPower(LeftbackPower);
             motorRight.setPower(RightPower);
             motorRightback.setPower(RightbackPower);
+            telemetry.addLine("motorWheel.1");
+            telemetry.update();
             
              //shooting
             if (gamepad1.left_trigger>0){
-                motorWheel.setPower(.55);
-                motorWheelred.setPower(-.55);
+                motorWheel.setVelocity(1500);
+                motorWheelred.setVelocity(-1500);
             }
             if (gamepad1.left_trigger == 0){
-                motorWheel.setPower(0);
-                motorWheelred.setPower(0);
+                motorWheel.setVelocity(0);
+                motorWheelred.setVelocity(0);
             }
             //Servo
             if (gamepad1.right_trigger>0){
-                pusherahhting.setPosition(.13);
+                pusherahhting.setPosition(.25);
             }
             if (gamepad1.right_trigger == 0){
-                pusherahhting.setPosition(.03);
+                pusherahhting.setPosition(.0);
                 
             }
             

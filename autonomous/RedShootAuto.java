@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
 @TeleOp
-public class RedAuto extends LinearOpMode {
+public class RedShootAuto extends LinearOpMode {
     DcMotor motorLeftback;
     DcMotor motorRightback;
     DcMotor motorLeft;
@@ -33,48 +33,33 @@ public class RedAuto extends LinearOpMode {
         motorRight.setDirection(DcMotor.Direction.REVERSE);
         motorRightback.setDirection(DcMotor.Direction.REVERSE);
         
-        //forward
-        motorLeft.setPower(-1);
-        motorLeftback.setPower(-1);
+        //backwards
+        motorLeft.setPower(-0.6);
+        motorLeftback.setPower(-0.6);
         
-        motorRight.setPower(-1);
-        motorRightback.setPower(-1);
+        motorRight.setPower(-0.85);
+        motorRightback.setPower(-0.85);
         
-        sleep(3920);
+        sleep(1000);
         
-        //turn
-        motorLeft.setPower(1);
-        motorLeftback.setPower(1);
-        
-        motorRight.setPower(-1);
-        motorRightback.setPower(-1);
-        sleep(990);
-        
-         //forward and intake
-        motorWheel.setPower(-.5);
-        motorWheelred.setPower(-.5);
-        
-        motorLeft.setPower(-.5);
-        motorLeftback.setPower(-.5);
-        
-        motorRight.setPower(-.5);
-        motorRightback.setPower(-.5);
-        
-        
-        
-        sleep(2550);
-        
-        motorWheel.setPower(0);
-        motorWheelred.setPower(0);
         motorLeft.setPower(0);
         motorLeftback.setPower(0);
         
         motorRight.setPower(0);
         motorRightback.setPower(0);
-            
-            
+        
+        
+        
+        
+        
+        // motorLeft.setPower(-.5);
+        // motorLeftback.setPower(-.5);
+        
+        // motorRight.setPower(-.5);
+        // motorRightback.setPower(-.5);
+        
     }
-    
+
         
     }
     
