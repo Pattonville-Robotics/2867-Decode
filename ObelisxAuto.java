@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -12,8 +13,8 @@ public class ObelisxAuto extends LinearOpMode {
     DcMotor motorRightback;
     DcMotor motorLeft;
     DcMotor motorRight;
-    DcMotor motorWheel;
-    DcMotor motorWheelred;
+    DcMotorEx motorWheel;
+    DcMotorEx motorWheelred;
     Servo pusherahhting;
     
     @Override
@@ -25,8 +26,8 @@ public class ObelisxAuto extends LinearOpMode {
         motorLeftback = hardwareMap.get(DcMotor.class, "motorLeftback");
         motorRightback = hardwareMap.get(DcMotor.class, "motorRightback");
         
-        motorWheel = hardwareMap.get(DcMotor.class, "motorWheel");
-        motorWheelred = hardwareMap.get(DcMotor.class, "motorWheelred");
+        motorWheel = hardwareMap.get(DcMotorEx.class, "motorWheel");
+        motorWheelred = hardwareMap.get(DcMotorEx.class, "motorWheelred");
         
         Servo pusherahhting = hardwareMap.get(Servo.class, "pusherahhting");
         
@@ -36,13 +37,13 @@ public class ObelisxAuto extends LinearOpMode {
         //forward
         motorWheel.setPower(0);
         motorWheelred.setPower(0);
-        motorLeft.setPower(-1);
-        motorLeftback.setPower(-1);
+        motorLeft.setPower(-0.6);
+        motorLeftback.setPower(-0.6);
         
-        motorRight.setPower(-1);
-        motorRightback.setPower(-1);
+        motorRight.setPower(-0.7);
+        motorRightback.setPower(-0.7);
         
-        sleep(1000);
+        sleep(1100);
         
         motorLeft.setPower(0);
         motorLeftback.setPower(0);
@@ -50,31 +51,32 @@ public class ObelisxAuto extends LinearOpMode {
         motorRight.setPower(0);
         motorRightback.setPower(0);
         
+        
+        
         //shoot
         sleep(1000);
-        motorWheel.setPower(-1);
-        motorWheelred.setPower(1);
-        sleep(5000);
+        motorWheel.setVelocity(1000);
+        motorWheelred.setVelocity(-1000);
+        sleep(1000);
         pusherahhting.setPosition(0.25);
-        
-        motorWheel.setPower(1);
-        motorWheelred.setPower(1);
-        
-        
-        pusherahhting.setPosition(.13);
-        sleep(5000);
-        pusherahhting.setPosition(.03);
-        sleep(5000);
-        
-        motorWheel.setPower(1);
-        motorWheelred.setPower(1);
-        
-        
-        pusherahhting.setPosition(.13);
-        sleep(5000);
-        pusherahhting.setPosition(.03);
-        sleep(5000);
-        
+        sleep(1000);
+        sleep(500);
+        pusherahhting.setPosition(0.0);
+        sleep(1000);
+        motorWheel.setVelocity(1000);
+        motorWheelred.setVelocity(-1000);
+        sleep(1000);
+        pusherahhting.setPosition(0.25);
+        sleep(1000);
+        pusherahhting.setPosition(0.0);
+        motorWheel.setVelocity(1000);
+        motorWheelred.setVelocity(-1000);
+        sleep(1000);
+        pusherahhting.setPosition(0.25);
+        sleep(1000);
+        pusherahhting.setPosition(0.0);
+        sleep(500);
+
         
         
         motorLeft.setPower(-.5);
@@ -86,16 +88,49 @@ public class ObelisxAuto extends LinearOpMode {
         
         
         
-        
-        motorWheel.setPower(0);
-        motorWheelred.setPower(0);
+        motorWheel.setVelocity(0);
+        motorWheelred.setVelocity(0);
         motorLeft.setPower(0);
         motorLeftback.setPower(0);
         
         motorRight.setPower(0);
         motorRightback.setPower(0);
             
-            
+        sleep(500);
+        motorWheel.setPower(0);
+        motorWheelred.setPower(0);
+        motorLeft.setPower(0.5);
+        motorLeftback.setPower(0.55);
+        
+        motorRight.setPower(0.7);
+        motorRightback.setPower(0.7);
+        sleep(500);
+        motorWheel.setPower(0);
+        motorWheelred.setPower(0);
+        motorLeft.setPower(0);
+        motorLeftback.setPower(0.0);
+        
+        motorRight.setPower(0.0);
+        motorRightback.setPower(-0.0);
+        
+        
+        sleep(100);
+        motorWheel.setPower(0);
+        motorWheelred.setPower(0);
+        motorLeft.setPower(-0.5);
+        motorLeftback.setPower(0.55);
+        
+        motorRight.setPower(0.7);
+        motorRightback.setPower(-0.7);
+        
+        sleep(500);
+        
+        
+        motorLeft.setPower(0);
+        motorLeftback.setPower(0);
+        
+        motorRight.setPower(0);
+        motorRightback.setPower(0);    
     }
     
         
